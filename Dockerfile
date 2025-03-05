@@ -16,7 +16,7 @@ FROM alpine:latest
 # so we remove the links and ensure that the iptables-legacy version is used.
 RUN apk update && apk add ca-certificates iptables iptables-legacy ip6tables  \
   && rm -rf /var/cache/apk/* \
-  && rm /sbin/iptables && ln -s /sbin/iptables-legacy /sbin/iptables  \
+  && ln -s /sbin/iptables-legacy /sbin/iptables  \
   && rm /sbin/ip6tables && ln -s /sbin/ip6tables-legacy /sbin/ip6tables
 
 
