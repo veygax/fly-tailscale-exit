@@ -17,7 +17,7 @@ FROM alpine:latest
 RUN apk update && apk add ca-certificates iptables iptables-legacy ip6tables  \
   && rm -rf /var/cache/apk/* \
   && ln -s /sbin/iptables-legacy /sbin/iptables  \
-  && rm /sbin/ip6tables && ln -s /sbin/ip6tables-legacy /sbin/ip6tables
+  && ln -s /sbin/ip6tables-legacy /sbin/ip6tables
 
 
 # creating directories for tailscale
